@@ -1,0 +1,97 @@
+<HTML>
+<BODY BGCOLOR="white">
+<PRE>
+<FONT color="green">001</FONT>    package shop.command;<a name="line.1"></a>
+<FONT color="green">002</FONT>    <a name="line.2"></a>
+<FONT color="green">003</FONT>    /**<a name="line.3"></a>
+<FONT color="green">004</FONT>     * An unbounded list of commands with undo/redo capability.<a name="line.4"></a>
+<FONT color="green">005</FONT>     *<a name="line.5"></a>
+<FONT color="green">006</FONT>     * &lt;p&gt;Logically, the functionality is described in terms of two stacks:<a name="line.6"></a>
+<FONT color="green">007</FONT>     * &lt;code&gt;undoable&lt;/code&gt; and &lt;code&gt;redoable&lt;/code&gt;, both initially empty.&lt;/p&gt;<a name="line.7"></a>
+<FONT color="green">008</FONT>     */<a name="line.8"></a>
+<FONT color="green">009</FONT>    public interface CommandHistory {<a name="line.9"></a>
+<FONT color="green">010</FONT>      /**<a name="line.10"></a>
+<FONT color="green">011</FONT>       * Add command &lt;code&gt;undoable&lt;/code&gt; and clear &lt;code&gt;redoable&lt;/code&gt;.<a name="line.11"></a>
+<FONT color="green">012</FONT>       * @param cmd the command to be run.<a name="line.12"></a>
+<FONT color="green">013</FONT>       */<a name="line.13"></a>
+<FONT color="green">014</FONT>      public void add(UndoableCommand cmd);<a name="line.14"></a>
+<FONT color="green">015</FONT>      <a name="line.15"></a>
+<FONT color="green">016</FONT>      /**<a name="line.16"></a>
+<FONT color="green">017</FONT>       * Returns a &lt;code&gt;RerunnableCommand&lt;/code&gt; that, when run does the following:<a name="line.17"></a>
+<FONT color="green">018</FONT>       * Pop command from &lt;code&gt;undoable&lt;/code&gt;, undo it, then push it<a name="line.18"></a>
+<FONT color="green">019</FONT>       * onto &lt;code&gt;redoable&lt;/code&gt;.<a name="line.19"></a>
+<FONT color="green">020</FONT>       * @throws EmptyStackException if there is no undoable command.<a name="line.20"></a>
+<FONT color="green">021</FONT>       */<a name="line.21"></a>
+<FONT color="green">022</FONT>      public RerunnableCommand getUndo();<a name="line.22"></a>
+<FONT color="green">023</FONT>    <a name="line.23"></a>
+<FONT color="green">024</FONT>      /**<a name="line.24"></a>
+<FONT color="green">025</FONT>       * Returns a &lt;code&gt;RerunnableCommand&lt;/code&gt; that, when run does the following:<a name="line.25"></a>
+<FONT color="green">026</FONT>       * Pop command from &lt;code&gt;redoable&lt;/code&gt;, redo it, then push it<a name="line.26"></a>
+<FONT color="green">027</FONT>       * onto &lt;code&gt;undoable&lt;/code&gt;.<a name="line.27"></a>
+<FONT color="green">028</FONT>       * @throws EmptyStackException if there is no redoable command.<a name="line.28"></a>
+<FONT color="green">029</FONT>       */<a name="line.29"></a>
+<FONT color="green">030</FONT>      public RerunnableCommand getRedo();<a name="line.30"></a>
+<FONT color="green">031</FONT>    }<a name="line.31"></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</PRE>
+</BODY>
+</HTML>

@@ -1,0 +1,92 @@
+<HTML>
+<BODY BGCOLOR="white">
+<PRE>
+<FONT color="green">001</FONT>    package shop.ui;<a name="line.1"></a>
+<FONT color="green">002</FONT>    <a name="line.2"></a>
+<FONT color="green">003</FONT>    import java.util.ArrayList;<a name="line.3"></a>
+<FONT color="green">004</FONT>    import java.util.List;<a name="line.4"></a>
+<FONT color="green">005</FONT>    <a name="line.5"></a>
+<FONT color="green">006</FONT>    public class UIMenuBuilder {<a name="line.6"></a>
+<FONT color="green">007</FONT>      private final List _menu;<a name="line.7"></a>
+<FONT color="green">008</FONT>      public UIMenuBuilder() {<a name="line.8"></a>
+<FONT color="green">009</FONT>        _menu = new ArrayList();<a name="line.9"></a>
+<FONT color="green">010</FONT>      }<a name="line.10"></a>
+<FONT color="green">011</FONT>      public UIMenu toUIMenu(String heading) {<a name="line.11"></a>
+<FONT color="green">012</FONT>        if (null == heading)<a name="line.12"></a>
+<FONT color="green">013</FONT>          throw new IllegalArgumentException();<a name="line.13"></a>
+<FONT color="green">014</FONT>        if (_menu.size() &lt;= 1)<a name="line.14"></a>
+<FONT color="green">015</FONT>          throw new IllegalStateException();<a name="line.15"></a>
+<FONT color="green">016</FONT>        UIMenu.Pair[] array = new UIMenu.Pair[_menu.size()];<a name="line.16"></a>
+<FONT color="green">017</FONT>        for (int i = 0; i &lt; _menu.size(); i++)<a name="line.17"></a>
+<FONT color="green">018</FONT>          array[i] = (UIMenu.Pair) (_menu.get(i));<a name="line.18"></a>
+<FONT color="green">019</FONT>        return new UIMenu(heading, array);<a name="line.19"></a>
+<FONT color="green">020</FONT>      }<a name="line.20"></a>
+<FONT color="green">021</FONT>      public void add(String prompt, UIMenuAction action) {<a name="line.21"></a>
+<FONT color="green">022</FONT>        if (null == action)<a name="line.22"></a>
+<FONT color="green">023</FONT>          throw new IllegalArgumentException();<a name="line.23"></a>
+<FONT color="green">024</FONT>        _menu.add(new UIMenu.Pair(prompt, action));<a name="line.24"></a>
+<FONT color="green">025</FONT>      }<a name="line.25"></a>
+<FONT color="green">026</FONT>    }<a name="line.26"></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</PRE>
+</BODY>
+</HTML>
