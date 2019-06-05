@@ -1,0 +1,120 @@
+<HTML>
+<BODY BGCOLOR="white">
+<PRE>
+<FONT color="green">001</FONT>    package shop.command;<a name="line.1"></a>
+<FONT color="green">002</FONT>    import java.util.Stack;<a name="line.2"></a>
+<FONT color="green">003</FONT>    <a name="line.3"></a>
+<FONT color="green">004</FONT>    final class CommandHistoryObj implements CommandHistory {<a name="line.4"></a>
+<FONT color="green">005</FONT>      Stack&lt;UndoableCommand&gt; _undoStack = new Stack&lt;UndoableCommand&gt;();<a name="line.5"></a>
+<FONT color="green">006</FONT>      Stack&lt;UndoableCommand&gt; _redoStack = new Stack&lt;UndoableCommand&gt;();<a name="line.6"></a>
+<FONT color="green">007</FONT>      RerunnableCommand _undoCmd = new RerunnableCommand () {<a name="line.7"></a>
+<FONT color="green">008</FONT>          public boolean run () {<a name="line.8"></a>
+<FONT color="green">009</FONT>            boolean result = !_undoStack.empty();<a name="line.9"></a>
+<FONT color="green">010</FONT>            if (result) {<a name="line.10"></a>
+<FONT color="green">011</FONT>              // Undo<a name="line.11"></a>
+<FONT color="green">012</FONT>              // TODO  <a name="line.12"></a>
+<FONT color="green">013</FONT>            }<a name="line.13"></a>
+<FONT color="green">014</FONT>            return result;<a name="line.14"></a>
+<FONT color="green">015</FONT>          }<a name="line.15"></a>
+<FONT color="green">016</FONT>        };<a name="line.16"></a>
+<FONT color="green">017</FONT>      RerunnableCommand _redoCmd = new RerunnableCommand () {<a name="line.17"></a>
+<FONT color="green">018</FONT>          public boolean run () {<a name="line.18"></a>
+<FONT color="green">019</FONT>            boolean result = !_redoStack.empty();<a name="line.19"></a>
+<FONT color="green">020</FONT>            if (result) {<a name="line.20"></a>
+<FONT color="green">021</FONT>              // Redo<a name="line.21"></a>
+<FONT color="green">022</FONT>              // TODO  <a name="line.22"></a>
+<FONT color="green">023</FONT>            }<a name="line.23"></a>
+<FONT color="green">024</FONT>            return result;<a name="line.24"></a>
+<FONT color="green">025</FONT>          }<a name="line.25"></a>
+<FONT color="green">026</FONT>        };<a name="line.26"></a>
+<FONT color="green">027</FONT>    <a name="line.27"></a>
+<FONT color="green">028</FONT>      public void add(UndoableCommand cmd) {<a name="line.28"></a>
+<FONT color="green">029</FONT>        // TODO  <a name="line.29"></a>
+<FONT color="green">030</FONT>      }<a name="line.30"></a>
+<FONT color="green">031</FONT>      <a name="line.31"></a>
+<FONT color="green">032</FONT>      public RerunnableCommand getUndo() {<a name="line.32"></a>
+<FONT color="green">033</FONT>        return _undoCmd;<a name="line.33"></a>
+<FONT color="green">034</FONT>      }<a name="line.34"></a>
+<FONT color="green">035</FONT>      <a name="line.35"></a>
+<FONT color="green">036</FONT>      public RerunnableCommand getRedo() {<a name="line.36"></a>
+<FONT color="green">037</FONT>        return _redoCmd;<a name="line.37"></a>
+<FONT color="green">038</FONT>      }<a name="line.38"></a>
+<FONT color="green">039</FONT>      <a name="line.39"></a>
+<FONT color="green">040</FONT>      // For testing<a name="line.40"></a>
+<FONT color="green">041</FONT>      UndoableCommand topUndoCommand() {<a name="line.41"></a>
+<FONT color="green">042</FONT>        if (_undoStack.empty())<a name="line.42"></a>
+<FONT color="green">043</FONT>          return null;<a name="line.43"></a>
+<FONT color="green">044</FONT>        else<a name="line.44"></a>
+<FONT color="green">045</FONT>          return _undoStack.peek();<a name="line.45"></a>
+<FONT color="green">046</FONT>      }<a name="line.46"></a>
+<FONT color="green">047</FONT>      // For testing<a name="line.47"></a>
+<FONT color="green">048</FONT>      UndoableCommand topRedoCommand() {<a name="line.48"></a>
+<FONT color="green">049</FONT>        if (_redoStack.empty())<a name="line.49"></a>
+<FONT color="green">050</FONT>          return null;<a name="line.50"></a>
+<FONT color="green">051</FONT>        else<a name="line.51"></a>
+<FONT color="green">052</FONT>          return _redoStack.peek();<a name="line.52"></a>
+<FONT color="green">053</FONT>      }<a name="line.53"></a>
+<FONT color="green">054</FONT>    }<a name="line.54"></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</PRE>
+</BODY>
+</HTML>
